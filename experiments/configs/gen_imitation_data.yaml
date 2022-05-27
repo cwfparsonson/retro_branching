@@ -1,0 +1,13 @@
+instances:
+  co_class: 'set_covering'
+  co_class_kwargs:
+    'n_rows': 165
+    'n_cols': 230
+
+experiment:
+  seed: 0
+  path_to_save: '/scratch/datasets/retro_branching/strong_branching'
+  num_cpus_factor: 20
+  branching: 'explore_then_strong_branch' # 'pure_strong_branch' 'explore_then_strong_branch'
+  min_samples: 126000
+  max_steps: null # None 3

@@ -1,0 +1,11 @@
+default_scip_params = {'separating/maxrounds': 0,
+                       'separating/maxroundsroot': 0,
+                       'separating/maxcuts': 0,
+                       'separating/maxcutsroot': 0,
+                       'presolving/maxrounds': 0,
+                       'presolving/maxrestarts': 0,
+                       'propagating/maxrounds':0,
+                       'propagating/maxroundsroot':0,
+                       'lp/initalgorithm':'d',
+                       'lp/resolvealgorithm':'d',
+                       'limits/time': 3600}

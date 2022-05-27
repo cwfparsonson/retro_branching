@@ -1,0 +1,4 @@
+co_class: 'set_covering'
+co_class_kwargs:
+ 'n_rows': 165
+ 'n_cols': 230

@@ -1,0 +1,24 @@
+environment:
+  observation_function: '43_var_features'
+  information_function: 'default'
+  reward_function: 'default'
+  scip_params: 'gasse_2019'
+
+instances:
+  co_class: 'set_covering'
+  co_class_kwargs:
+    'n_rows': 165
+    'n_cols': 230
+    
+validator:
+  threshold_difficulty: null
+  max_steps: 1000000000000
+  max_steps_agent: null
+  overwrite: True
+  
+experiment:
+  agent_name: 'retro' # pseudocost_branching strong_branching scip_branching
+  path_to_load_agent: '/scratch/datasets/retro_branching/instances/retro_branching_paper_validation_agents'
+  path_to_load_instances: '/scratch/datasets/retro_branching/instances/retro_branching_paper_validation_instances'
+  path_to_save: '/scratch/datasets/retro_branching/instances/retro_branching_paper_validation_agents'
+  device: 'cpu' # cuda:0 cpu

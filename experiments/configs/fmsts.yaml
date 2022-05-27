@@ -1,0 +1,26 @@
+defaults:
+  - network: dqn_value_network
+  - agent: dqn_agent
+  - learner: dqn_learner
+
+environment:
+  observation_function: '43_var_features'
+  information_function: 'default'
+  reward_function: 'retro_fmsts'
+  scip_params: 'dfs'
+  
+learner:
+  path_to_save: '/scratch/datasets/retro_branching'
+  agent_reward: 'retro_fmsts'
+
+instances:
+  co_class: 'set_covering'
+  co_class_kwargs:
+    'n_rows': 165
+    'n_cols': 230
+
+experiment:
+  seed: 0
+  device: 'cuda:1'
+  num_epochs: 5000000
+  

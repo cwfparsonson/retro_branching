@@ -1,0 +1,71 @@
+batch_size: 128
+lr: 0.00005
+gamma: 0.99
+n_step_return: 3
+double_dqn_clipping: True
+loss_function: 'mean_squared_error'
+optimizer_name: 'adam'
+
+initial_epsilon: 0.025
+final_epsilon: 0.025
+final_epsilon_epoch: 5000
+
+max_steps: 1000000000000
+max_steps_agent: null
+
+buffer_min_length: 20000 # 20000 200
+buffer_capacity: 100000 # 100000
+use_per: null
+use_cer: null
+initial_per_beta: 0.4
+final_per_beta: 1.0
+final_per_beta_epoch: 5000
+per_alpha: 0.6
+min_agent_per_priority: 0.001
+prob_add_to_buffer: 1
+
+steps_per_update: 10
+hard_update_target_frequency: 10000
+soft_update_target_tau: 0.0001
+
+gradient_clipping_max_norm: null
+gradient_clipping_clip_value: 10
+accumulate_gradient_factor: 1
+save_gradients: True
+
+reproducible_episodes: True
+reset_envs_batch: 1
+
+agent_reward: 'retro_binary_fathomed'
+intrinsic_reward: null
+intrinsic_extrinsic_combiner: 'list'
+
+munchausen_tau: 0
+munchausen_lo: -1
+munchausen_alpha: 0.9
+
+threshold_difficulty: null
+threshold_agent: null
+threshold_env: null
+
+demonstrator_agent: null
+save_demonstrator_buffer: False
+num_pretraining_epochs: 10000
+demonstrator_buffer_capacity: 10000
+min_demonstrator_per_priority: 0.1
+demonstrator_n_step_return_loss_weight: 1
+demonstrator_margin_loss_weight: 0.00001
+demonstrator_margin: 0.8
+weight_decay: 0
+
+backtrack_rollout_expert: null
+max_attempts_to_reach_expert: 1
+
+episode_log_frequency: 1
+checkpoint_frequency: 2500
+path_to_save: '/scratch/datasets/retro_branching'
+use_sqlite_dict: True
+name: 'dqn_learner'
+
+debug_mode: False
+profile_time: False

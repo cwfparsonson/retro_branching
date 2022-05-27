@@ -1,0 +1,4 @@
+observation_function: '43_var_features'
+information_function: 'default'
+reward_function: 'default'
+scip_params: 'gasse_2019'

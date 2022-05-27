@@ -1,0 +1,24 @@
+emb_size: 64
+num_rounds: 1
+cons_nfeats: 5
+edge_nfeats: 1
+var_nfeats: 43
+
+aggregator: 'add'
+activation: 'inverse_leaky_relu'
+
+num_heads: 1
+head_depth: 2
+head_aggreagtor: 'add'
+
+linear_weight_init: 'normal'
+linear_bias_init: 'zeros'
+layernorm_weight_init: null
+layernorm_bias_init: null
+
+include_edge_features: True
+use_old_heads_implementation: False
+profile_time: False
+
+init_value_network_path: null
+reinitialise_heads: False

@@ -1,0 +1,3 @@
+co_class: 'maximum_independent_set'
+co_class_kwargs:
+  'n_nodes': 25

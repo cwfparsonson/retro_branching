@@ -1,0 +1,6 @@
+co_class: 'set_covering'
+co_class_kwargs:
+  'n_rows': 500
+  'n_cols': 1000
+# path_to_instances: '/scratch/datasets/retro_branching/instances/training/nrows_500_ncols_1000/scip_params_default/threshold_difficulty_None/threshold_agent_None/seed_0/samples/samples_1/'
+# sampling_mode: 'remove_and_repeat'

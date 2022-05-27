@@ -1,0 +1,4 @@
+co_class: 'capacitated_facility_location'
+co_class_kwargs:
+ 'n_customers': 5
+ 'n_facilities': 5

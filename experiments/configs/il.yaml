@@ -1,0 +1,27 @@
+defaults:
+  - network: gasse_network
+
+instances:
+  co_class: 'set_covering'
+  co_class_kwargs:
+    'n_rows': 165
+    'n_cols': 230
+
+experiment:
+  seed: 0
+  device: 'cuda:1'
+  path_to_load_imitation_data: '/scratch/datasets/retro_branching/strong_branching'
+  path_to_save: '/scratch/datasets/retro_branching'
+  branching: 'explore_then_strong_branch' # 'pure_strong_branch' 'explore_then_strong_branch'
+  max_steps: null # None 3
+  num_samples: 120000
+  num_epochs: 1000
+  
+learner:
+  imitation_target: 'expert_actions' # 'expert_scores' 'expert_score' 'expert_actions' 'expert_bipartite_ranking'
+  loss_function: 'cross_entropy' # mean_squared_error cross_entropy jensen_shannon_distance kullback_leibler_divergence
+  lr: 0.0001
+  epoch_log_frequency: 1
+  checkpoint_frequency: 1
+  name: 'supervised_learner'
+  
