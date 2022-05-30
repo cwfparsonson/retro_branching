@@ -135,7 +135,7 @@ The above validation runs will each save an ``episodes_log.pkl`` file. Below is 
     print(f'Per-instance # nodes: {num_nodes_for_each_instance}')
     print(f'All-instances mean # nodes: {np.mean(num_nodes_for_each_instance)}')
 
-For more examples of how to interact with and visualise the saved validation data, see `notebooks/paper/performance_bar_charts.ipynb <https://github.com/cwfparsonson/retro_branching/blob/master/notebooks/paper/performance_bar_charts.ipynb>`_ and `notebooks/paper/winer_plots.ipynb <https://github.com/cwfparsonson/retro_branching/blob/master/notebooks/paper/winner_plots.ipynb>`_
+For more examples of how to interact with and visualise the saved validation data, see `notebooks/paper/performance_bar_charts.ipynb <https://github.com/cwfparsonson/retro_branching/blob/master/notebooks/paper/performance_bar_charts.ipynb>`_ and `notebooks/paper/winner_plots.ipynb <https://github.com/cwfparsonson/retro_branching/blob/master/notebooks/paper/winner_plots.ipynb>`_
 
 
 Citing this work
