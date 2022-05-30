@@ -135,6 +135,9 @@ dmypy.json
 *.lp
 *.gz
 *.tar
+*.mp4
+media/
+*media/
 datasets/
 *datasets/
 *.json
