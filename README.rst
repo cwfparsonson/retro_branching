@@ -2,15 +2,17 @@
 :space_invader: Retro Branching :herb:
 ======================================
 
-.. image:: assets/retrospective_trajectory_construction.png
-    :width: 800 
 
+.. image:: assets/retrospective_trajectory_construction.png
+    :align: center
+    :width: 800 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 Implementation of retro branching as reported in 'Reinforcement Learning for Branch-and-Bound Optimisation using Retrospective Trajectories'
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 Setup
