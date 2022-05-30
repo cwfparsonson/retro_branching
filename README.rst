@@ -7,6 +7,8 @@
 Implementation of retro branching as reported in 'Reinforcement Learning for Branch-and-Bound Optimisation using Retrospective Trajectories'
 
 .. figure:: assets/retro_branching_AdobeCreativeCloudExpress.gif
+    align: 'center'
+    figwidth: 600
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
