@@ -72,7 +72,7 @@ E.g. Train Retro on set covering instances with 165 rows and 230 columns::
 
     $ python experiments/dqn_trainer.py --config-path=configs --config-name=retro.yaml experiment.device=cuda:0 learner.path_to_save=. instances.co_class=set_covering instances.co_class_kwargs.n_rows=165 instances.co_class_kwargs.n_cols=230
 
-For an example of how to interact with and visualise the saved training data, see ``retro_branching/notebooks/paper/training_curves.ipynb``
+For an example of how to interact with and visualise the saved training data, see `notebooks/paper/training_curves.ipynb <https://github.com/cwfparsonson/retro_branching/blob/master/notebooks/paper/training_curves.ipynb>`_
     
 Imitation Learning
 ~~~~~~~~~~~~~~~~~~
@@ -135,7 +135,7 @@ The above validation runs will each save an ``episodes_log.pkl`` file. Below is 
     print(f'Per-instance # nodes: {num_nodes_for_each_instance}')
     print(f'All-instances mean # nodes: {np.mean(num_nodes_for_each_instance)}')
 
-For more examples of how to interact with and visualise the saved validation data, see ``retro_branching/notebooks/paper/performance_bar_charts.ipynb`` and ``retro_branching/notebooks/paper/winer_plots.ipynb``
+For more examples of how to interact with and visualise the saved validation data, see `notebooks/paper/performance_bar_charts.ipynb <https://github.com/cwfparsonson/retro_branching/blob/master/notebooks/paper/performance_bar_charts.ipynb>`_ and `notebooks/paper/winer_plots.ipynb <https://github.com/cwfparsonson/retro_branching/blob/master/notebooks/paper/winner_plots.ipynb>`_
 
 
 Citing this work
