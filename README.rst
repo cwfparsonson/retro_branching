@@ -29,8 +29,8 @@ Using the Retro Branching Method in your Own Code
 =================================================
 
 Although tracking the state of the B&B search tree is not natively supported by ``SCIP``, ``PySCIPOpt``, or ``Ecole``, doing so is relatively straightforward. We have
-provided two standalone notebook tutorials; one on tracking the B&B search tree (``retro_branching/notebooks/tutorials/tutorial_1_tracking_the_bnb_search_tree.ipynb``), 
-and another on using the search tree to construct retrospective trajectories for your own agents (``retro_branching/notebooks/tutorials/tutorial_2_retro_branching.ipynb``).
+provided two standalone notebook tutorials; one on tracking the B&B search tree (`notebooks/tutorials/tutorial_1_tracking_the_bnb_search_tree.ipynb <https://github.com/cwfparsonson/retro_branching/blob/master/notebooks/tutorials/tutorial_1_tracking_the_bnb_search_tree.ipynb>`_), 
+and another on using the search tree to construct retrospective trajectories for your own agents (`notebooks/tutorials/tutorial_2_retro_branching.ipynb <https://github.com/cwfparsonson/retro_branching/blob/master/notebooks/tutorials/tutorial_2_retro_branching.ipynb>`_).
 
 
 Re-Running the Paper's Experiments

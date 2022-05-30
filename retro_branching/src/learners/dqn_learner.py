@@ -1088,6 +1088,7 @@ class DQNLearner(Learner):
         self.path_to_save = path_to_save
         if path_to_save is not None:
             self.path_to_save = self.init_save_dir(path=path_to_save, use_sqlite_database=use_sqlite_database)
+            print(f'Initialised agent path to save at {self.path_to_save}')
         self.save_thread = None
         self.use_sqlite_database = use_sqlite_database
 
