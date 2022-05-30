@@ -2,6 +2,7 @@ name: rlgnn
 channels:
   - pytorch
   - pyg
+  - anaconda
   - conda-forge
   - defaults
 dependencies:
@@ -20,9 +21,9 @@ dependencies:
   - bottleneck=1.3.4=py37hce1f21e_0
   - brotlipy=0.7.0=py37h27cfd23_1003
   - bzip2=1.0.8=h7b6447c_0
-  - ca-certificates=2022.5.18.1=ha878542_0
+  - ca-certificates=2022.4.26=h06a4308_0
   - cairo=1.16.0=h18b612c_1001
-  - certifi=2022.5.18.1=py37h89c1867_0
+  - certifi=2021.10.8=py37h06a4308_2
   - cffi=1.15.0=py37h7f8727e_0
   - charset-normalizer=2.0.4=pyhd3eb1b0_0
   - cloudpickle=2.0.0=pyhd3eb1b0_0
@@ -41,14 +42,18 @@ dependencies:
   - fmt=8.1.1=hd09550d_1
   - fontconfig=2.13.1=h6c09931_0
   - freetype=2.11.0=h70c0345_0
+  - fribidi=1.0.10=h7b6447c_0
   - giflib=5.2.1=h7b6447c_0
   - glib=2.63.1=h5a9c865_0
   - gmp=6.2.1=h2531618_2
   - gnutls=3.6.15=he1e5248_0
   - googledrivedownloader=0.4=pyhd3deb0d_1
+  - graphite2=1.3.14=h23475e2_0
+  - graphviz=2.40.1=h21bd128_2
   - gst-plugins-base=1.14.0=hbbd80ab_1
   - gstreamer=1.14.0=hb453b48_1
   - gym=0.21.0=py37h6531663_2
+  - harfbuzz=1.8.8=hffaf4a1_0
   - hydra=2.5=py37h5e8e339_0
   - icu=58.2=he6710b0_3
   - idna=3.3=pyhd3eb1b0_0
@@ -128,25 +133,27 @@ dependencies:
   - numpy=1.21.5=py37he7a7128_2
   - numpy-base=1.21.5=py37hf524024_2
   - openh264=2.1.1=h4ff587b_0
-  - openssl=1.1.1o=h166bdaf_0
+  - openssl=1.1.1n=h7f8727e_0
   - ordered-set=4.1.0=pyhd8ed1ab_0
   - orderedset=2.0.3=py37h540881e_6
   - packaging=21.3=pyhd3eb1b0_0
   - pandas=1.3.5=py37h8c16a72_0
   - pandoc=2.12=h06a4308_0
   - pandocfilters=1.5.0=pyhd3eb1b0_0
+  - pango=1.42.4=h049681c_0
   - parso=0.8.3=pyhd3eb1b0_0
   - patsy=0.5.2=py37h06a4308_1
   - pcre=8.45=h295c915_0
   - pexpect=4.8.0=pyhd3eb1b0_3
   - pickleshare=0.7.5=pyhd3eb1b0_1003
   - pillow=9.0.1=py37h22f2fdc_0
-  - pip=21.2.2=py37h06a4308_0
   - pixman=0.38.0=h516909a_1003
   - prometheus_client=0.13.1=pyhd3eb1b0_0
   - prompt-toolkit=3.0.20=pyhd3eb1b0_0
   - ptyprocess=0.7.0=pyhd3eb1b0_2
+  - pycairo=1.21.0=py37h0afab05_1
   - pycparser=2.21=pyhd3eb1b0_0
+  - pydot=1.4.1=py37h06a4308_0
   - pyg=2.0.4=py37_torch_1.10.0_cu113
   - pygments=2.11.2=pyhd3eb1b0_0
   - pyopenssl=22.0.0=pyhd3eb1b0_0
@@ -230,27 +237,48 @@ dependencies:
     - aiosignal==1.2.0
     - antlr4-python3-runtime==4.9.3
     - ase==3.22.1
+    - backports-cached-property==1.0.1
     - click==8.1.3
+    - click-default-group==1.2.2
+    - cloup==0.13.1
+    - colour==0.1.5
+    - commonmark==0.9.1
     - contextlib2==21.6.0
     - distlib==0.3.4
     - filelock==3.7.0
     - frozenlist==1.3.0
+    - glcontext==2.3.6
     - grpcio==1.43.0
     - h5py==3.7.0
     - hydra-core==1.2.0
     - isodate==0.6.1
+    - isosurfaces==0.1.0
     - llvmlite==0.38.1
+    - manim==0.15.2
+    - manimpango==0.4.1
+    - mapbox-earcut==0.12.11
     - ml-collections==0.1.0
+    - moderngl==5.6.4
+    - moderngl-window==2.4.1
     - msgpack==1.0.3
+    - multipledispatch==0.6.0
     - numba==0.55.2
     - omegaconf==2.2.1
     - platformdirs==2.5.2
     - protobuf==3.20.1
+    - pydub==0.25.1
+    - pyglet==1.5.26
+    - pyrr==0.10.3
     - python-louvain==0.16
     - ray==1.12.1
     - rdflib==6.1.1
+    - rich==12.4.4
+    - screeninfo==0.8
     - sigfig==1.2.0
+    - skia-pathops==0.7.2
     - sortedcontainers==2.4.0
+    - srt==3.5.2
     - threadpoolctl==3.1.0
     - virtualenv==20.14.1
+    - watchdog==2.1.8
 prefix: /scratch/zciccwf/py36/envs/rlgnn
