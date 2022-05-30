@@ -8,7 +8,7 @@ Implementation of retro branching as reported in 'Reinforcement Learning for Bra
 
 .. figure:: assets/retro_branching_AdobeCreativeCloudExpress.gif
     align: center
-    figwidth: 600
+    width: 600
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
