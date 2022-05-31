@@ -149,5 +149,5 @@ If you find this project or the associated paper useful, please cite our work:
       title = {Reinforcement Learning for Branch-and-Bound Optimisation using Retrospective Trajectories},
       author = {Parsonson, Christopher W. F. and Laterre, Alexandre and Barrett, Thomas D.},
       journal={arXiv prepring arXiv:2205.14345},
-      year = {2022},
-    }
+      year = {2022}
+      }
