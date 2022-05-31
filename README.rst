@@ -143,7 +143,11 @@ For more examples of how to interact with and visualise the saved validation dat
 
 Citing this work
 ================
+If you find this project or the associated paper useful, please cite our work:
 
-TODO: 
-
-- Add citation
+    @article{parsonson2022retro,
+      title = {Reinforcement Learning for Branch-and-Bound Optimisation using Retrospective Trajectories},
+      author = {Parsonson, Christopher W. F. and Laterre, Alexandre and Barrett, Thomas D.},
+      journal={arXiv prepring arXiv:2205.14345},
+      year = {2022},
+    }
