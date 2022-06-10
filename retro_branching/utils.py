@@ -346,20 +346,35 @@ class BipartiteNodeData(torch_geometric.data.Data):
     This class encode a node bipartite graph observation as returned by the `ecole.observation.NodeBipartite` 
     observation function in a format understood by the pytorch geometric data handlers.
     """
-    def __init__(self, constraint_features, edge_indices, edge_features, variable_features,
-                 candidates, candidate_choice, candidate_scores, score):
+    def __init__(self, 
+                 constraint_features=None, 
+                 edge_indices=None, 
+                 edge_features=None, 
+                 variable_features=None,
+                 candidates=None, 
+                 candidate_choice=None, 
+                 candidate_scores=None, 
+                 score=None):
         super().__init__()
-        self.constraint_features = torch.FloatTensor(constraint_features)
-        self.edge_index = torch.LongTensor(edge_indices.astype(np.int64))
-        self.edge_attr = torch.FloatTensor(edge_features).unsqueeze(1)
-        self.variable_features = torch.FloatTensor(variable_features)
-        self.candidates = candidates
-        self.num_candidates = len(candidates)
-        self.candidate_choices = candidate_choice
-        self.candidate_scores = candidate_scores
-        self.score = score 
+        if constraint_features is not None:
+            self.constraint_features = torch.FloatTensor(constraint_features)
+        if edge_indices is not None:
+            self.edge_index = torch.LongTensor(edge_indices.astype(np.int64))
+        if edge_features is not None:
+            self.edge_attr = torch.FloatTensor(edge_features).unsqueeze(1)
+        if variable_features is not None:
+            self.variable_features = torch.FloatTensor(variable_features)
+        if candidates is not None:
+            self.candidates = torch.LongTensor(candidates)
+            self.num_candidates = len(candidates)
+        if candidate_choice is not None:
+            self.candidate_choices = torch.LongTensor(candidate_choice)
+        if candidate_scores is not None:
+            self.candidate_scores = torch.FloatTensor(candidate_scores)
+        if score is not None:
+            self.score = torch.FloatTensor(score)
 
-    def __inc__(self, key, value):
+    def __inc__(self, key, value, *args, **kwargs):
         """
         We overload the pytorch geometric method that tells how to increment indices when concatenating graphs 
         for those entries (edge index, candidates) for which this is not obvious.
@@ -370,7 +385,6 @@ class BipartiteNodeData(torch_geometric.data.Data):
             return self.variable_features.size(0)
         else:
             return super().__inc__(key, value)
-
 
 class GraphDataset(torch_geometric.data.Dataset):
     """
