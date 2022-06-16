@@ -92,13 +92,9 @@ Train IL on the generated strong branching experiences::
 Testing
 -------
 
-Download the validation instances from Google drive to a ``retro_branching_paper_validation_instances`` folder::
+Download the validation instances and trained ML agents from Google drive to a ``retro_branching_paper_validation_instances`` and ``retro_branching_paper_validation_agents`` folder respectively::
 
-    $ gdown https://drive.google.com/file/d/1knhbVEM0N5PbYU653ilk3gu6FbVRVSG-
-    
-Download the trained ML agents from Google drive to a ``retro_branching_paper_validation_agents`` folder::
-
-    $ gdown https://drive.google.com/file/d/1knhbVEM0N5PbYU653ilk3gu6FbVRVSG-
+    $ gdown --folder https://drive.google.com/drive/u/0/folders/1nZDsofdfmXvD6Y9sYAOse0eK90NLQOOK
 
 Run a trained RL agent on the appropriate validation instances (set covering instances with 500 rows and 1000 columns have the Retro, Original, FMSTS, and IL agents available, all other CO instances have only the Retro and IL agents available) and save the validation results to an ``rl_validator`` folder in the appropriate agent directory of the ``retro_branching_paper_validation_agents`` folder from above::
 
