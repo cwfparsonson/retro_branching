@@ -34,7 +34,7 @@ def run(cfg: DictConfig):
     if cfg.experiment.agent_name not in set(['pseudocost_branching', 'strong_branching', 'scip_branching']):
         # is an ML agent
         path = cfg.experiment.path_to_load_agent + f'/{gen_co_name(cfg.instances.co_class, cfg.instances.co_class_kwargs)}/{cfg.experiment.agent_name}/'
-        config = path + '/config.json'
+        config = path + 'config.json'
         agent = Agent(device=cfg.experiment.device, config=config, name=cfg.experiment.agent_name)
         for network_name, network in agent.get_networks().items():
             if network is not None:

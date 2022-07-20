@@ -71,7 +71,7 @@ Retro      retro.yaml
 FMSTS      fmsts.yaml
 ========   =============
 
-E.g. Train Retro on set covering instances with 165 rows and 230 columns::
+E.g. Train Retro on set covering instances with 165 rows and 230 columns (N.B. For the small instances (e.g. combinatorial auction with ``n_items=10`` ``n_bids=50``), set ``environment.scip_params=default`` to disable most of the pre-solving features of ``scip`` and prevent the majority of instances being pre-solved) and save the validation results to an ``rl_validator`` folder in the appropriate agent directory of the ``retro_branching_paper_validation_agents`` folder from above::
 
     $ python experiments/dqn_trainer.py --config-path=configs --config-name=retro.yaml experiment.device=cuda:0 learner.path_to_save=. instances.co_class=set_covering instances.co_class_kwargs.n_rows=165 instances.co_class_kwargs.n_cols=230
 
@@ -96,7 +96,9 @@ Download the validation instances and trained ML agents from Google drive to a `
 
     $ gdown --folder https://drive.google.com/drive/u/0/folders/1nZDsofdfmXvD6Y9sYAOse0eK90NLQOOK
 
-Run a trained RL agent on the appropriate validation instances (set covering instances with 500 rows and 1000 columns have the Retro, Original, FMSTS, and IL agents available, all other CO instances have only the Retro and IL agents available) and save the validation results to an ``rl_validator`` folder in the appropriate agent directory of the ``retro_branching_paper_validation_agents`` folder from above::
+You can then unzip and extract the folders using ``gunzip <folder_name>.tar.gz`` and ``tar --extract --file=<file_name>.tar`` respectively.
+
+Run a trained RL agent on the appropriate validation instances (please note: 1) Set covering instances with 500 rows and 1000 columns have the Retro, Original, FMSTS, and IL agents available, all other CO instances have only the Retro and IL agents available, and 2) For the small instances (e.g. combinatorial auction with ``n_items=10`` ``n_bids=50``), set ``environment.scip_params=default`` to disable most of the pre-solving features of ``scip`` and prevent the majority of instances being pre-solved) and save the validation results to an ``rl_validator`` folder in the appropriate agent directory of the ``retro_branching_paper_validation_agents`` folder from above::
 
     $ python experiments/validator.py --config-path=configs --config-name=validator.yaml environment.observation_function=43_var_features environment.scip_params=gasse_2019 instances.co_class=set_covering instances.co_class_kwargs.n_rows=165 instances.co_class_kwargs.n_cols=230 experiment.agent_name=retro experiment.path_to_load_agent=./retro_branching_paper_validation_agents experiment.path_to_load_instances=./retro_branching_paper_validation_instances experiment.path_to_save=./retro_branching_paper_validation_agents/ experiment.device=cuda:0
 

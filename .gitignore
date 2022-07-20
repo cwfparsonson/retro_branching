@@ -143,6 +143,8 @@ datasets/
 *.json
 *build-temp*
 retro_branching_singularity/
+retro_branching_paper_validation_agents/
+retro_branching_paper_validation_instances/
 
 # other
 docker_usage.txt
