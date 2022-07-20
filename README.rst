@@ -96,7 +96,7 @@ Download the validation instances and trained ML agents from Google drive to a `
 
     $ gdown --folder https://drive.google.com/drive/u/0/folders/1nZDsofdfmXvD6Y9sYAOse0eK90NLQOOK
 
-You can then unzip and extract the folders using ``gunzip <folder_name>.tar.gz`` and ``tar --extract --file=<file_name>.tar`` respectively.
+(You can unzip and extract the folders using ``gunzip <folder_name>.tar.gz`` and ``tar --extract --file=<file_name>.tar`` respectively).
 
 Run a trained RL agent on the appropriate validation instances (please note: 1) Set covering instances with 500 rows and 1000 columns have the Retro, Original, FMSTS, and IL agents available, all other CO instances have only the Retro and IL agents available, and 2) For the small instances (e.g. combinatorial auction with ``n_items=10`` ``n_bids=50``), set ``environment.scip_params=default`` to disable most of the pre-solving features of ``scip`` and prevent the majority of instances being pre-solved) and save the validation results to an ``rl_validator`` folder in the appropriate agent directory of the ``retro_branching_paper_validation_agents`` folder from above::
 
