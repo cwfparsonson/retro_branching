@@ -4,7 +4,7 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-Implementation of retro branching as reported in 'Reinforcement Learning for Branch-and-Bound Optimisation using Retrospective Trajectories'
+Implementation of retro branching as reported in `Reinforcement Learning for Branch-and-Bound Optimisation using Retrospective Trajectories <https://arxiv.org/abs/2205.14345>`_.
 
 .. figure:: assets/retro_branching_800.gif
 
