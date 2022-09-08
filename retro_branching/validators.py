@@ -137,12 +137,12 @@ def calibrate_hardware(calibration_config, device, kwargs):
 # def extract_state_tensors_from_ecole_obs(obs, device):
     # return (torch.from_numpy(obs.row_features.astype(np.float32)).to(device), 
             # torch.LongTensor(obs.edge_features.indices.astype(np.int16)).to(device),
-            # torch.from_numpy(obs.column_features.astype(np.float32)).to(device))
+            # torch.from_numpy(obs.variable_features.astype(np.float32)).to(device))
 def extract_state_tensors_from_ecole_obs(obs, device):
     return (torch.from_numpy(obs.row_features.astype(np.float32)).to(device), 
             torch.LongTensor(obs.edge_features.indices.astype(np.int16)).to(device),
             torch.from_numpy(obs.edge_features.values.astype(np.float32)).to(device).unsqueeze(1),
-            torch.from_numpy(obs.column_features.astype(np.float32)).to(device))
+            torch.from_numpy(obs.variable_features.astype(np.float32)).to(device))
 
 
 

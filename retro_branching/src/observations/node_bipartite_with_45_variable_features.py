@@ -135,8 +135,8 @@ class NodeBipariteWith45VariableFeatures(ecole.observation.NodeBipartite):
                                  is_best_sibling_best_node,
                                  best_sibling_lower_bound_relative_to_init_dual_bound,
                                  best_sibling_lower_bound_relative_to_curr_dual_bound,
-                                 best_sibling_lower_bound_relative_to_curr_node_lower_bound] for _ in range(obs.column_features.shape[0])])
+                                 best_sibling_lower_bound_relative_to_curr_node_lower_bound] for _ in range(obs.variable_features.shape[0])])
         
-        obs.column_features = np.column_stack((obs.column_features, feats_to_add))
+        obs.variable_features = np.column_stack((obs.variable_features, feats_to_add))
                 
         return obs

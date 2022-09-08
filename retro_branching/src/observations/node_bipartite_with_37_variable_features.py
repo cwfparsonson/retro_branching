@@ -131,7 +131,7 @@ class NodeBipariteWith37VariableFeatures(ecole.observation.NodeBipartite):
                                  best_sibling_lower_bound_relative_to_init_dual_bound,
                                  best_sibling_lower_bound_relative_to_curr_node_lower_bound
                                  ] 
-                                 for _ in range(obs.column_features.shape[0])])
+                                 for _ in range(obs.variable_features.shape[0])])
 
         # # TEMP DEBUGGING
         # illegal_feat_idx_to_val = defaultdict(lambda: [])
@@ -144,7 +144,7 @@ class NodeBipariteWith37VariableFeatures(ecole.observation.NodeBipartite):
         # if illegal_found:
             # raise Exception(f'Found illegal feature(s): {illegal_feat_idx_to_val}')
         
-        obs.column_features = np.column_stack((obs.column_features, feats_to_add))
+        obs.variable_features = np.column_stack((obs.variable_features, feats_to_add))
 
                 
         return obs

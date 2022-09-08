@@ -30,6 +30,6 @@ class NodeBipariteWithSolutionLabels(ecole.observation.NodeBipartite):
         obs = super().extract(model, done)
 
         # label vars in obs with final solution values
-        obs.column_features = np.column_stack((obs.column_features, self.presolve_sol_vals))
+        obs.variable_features = np.column_stack((obs.variable_features, self.presolve_sol_vals))
 
         return obs

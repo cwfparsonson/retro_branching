@@ -40,11 +40,11 @@ class NodeBipariteWithCustomFeatures(ecole.observation.NodeBipartite):
             self.obj_coeffs_renorm = self.obj_coeffs_norm / np.sum(var_coeffs)
 
         # print("row_features", obs.row_features.shape) # [500,5]
-        # print("col_features", obs.column_features.shape) # [1000,19]
+        # print("col_features", obs.variable_features.shape) # [1000,19]
         # print("edge_features", obs.edge_features.shape) # [500,1000]
 
         # remove scaled age
-        # obs.column_features = np.delete(obs.column_features, 12, -1)
+        # obs.variable_features = np.delete(obs.variable_features, 12, -1)
 
         # Global primal/dual.
         glob_primal_bound, glob_dual_bound = m.getPrimalbound(), m.getDualbound()
@@ -73,13 +73,13 @@ class NodeBipariteWithCustomFeatures(ecole.observation.NodeBipartite):
             primal_change_gap,
             curr_node_depth,
         ])
-        features_to_add = features_to_add[None].repeat(obs.column_features.shape[0], 0)
+        features_to_add = features_to_add[None].repeat(obs.variable_features.shape[0], 0)
 
-        # obs.column_features[..., 0] = obs.column_features[..., 0] * self.obj_coeffs_renorm
-        # obs.column_features[..., 7] = obs.column_features[..., 7] * self.obj_coeffs_renorm
+        # obs.variable_features[..., 0] = obs.variable_features[..., 0] * self.obj_coeffs_renorm
+        # obs.variable_features[..., 7] = obs.variable_features[..., 7] * self.obj_coeffs_renorm
 
-        obs.column_features = np.column_stack([
-            obs.column_features,
+        obs.variable_features = np.column_stack([
+            obs.variable_features,
             features_to_add,
         ])
 

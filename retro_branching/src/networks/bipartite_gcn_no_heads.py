@@ -144,7 +144,7 @@ class BipartiteGCNNoHeads(torch.nn.Module):
             constraint_features = torch.from_numpy(obs.row_features.astype(np.float32)).to(self.device)
             edge_indices = torch.from_numpy(obs.edge_features.indices.astype(np.int64)).to(self.device)
             edge_features = torch.from_numpy(obs.edge_features.values.astype(np.float32)).view(-1, 1).to(self.device)
-            variable_features = torch.from_numpy(obs.column_features.astype(np.float32)).to(self.device)
+            variable_features = torch.from_numpy(obs.variable_features.astype(np.float32)).to(self.device)
 
         reversed_edge_indices = torch.stack([edge_indices[1], edge_indices[0]], dim=0)
         

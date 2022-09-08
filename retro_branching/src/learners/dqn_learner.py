@@ -175,7 +175,7 @@ def extract_state_tensors_from_ecole_obs(obs, action_set):
     return (obs.row_features.astype(np.float32), 
             obs.edge_features.indices.astype(np.int16),
             obs.edge_features.values.astype(np.float32),
-            obs.column_features.astype(np.float32),
+            obs.variable_features.astype(np.float32),
             action_set.astype(np.int16))
 
 def process_episodes_into_subtree_episodes(episode_experiences,
@@ -378,7 +378,7 @@ class BipartiteNodeData(torch_geometric.data.Data):
         # self.constraint_features = torch.FloatTensor(obs.row_features)
         # self.edge_index = torch.LongTensor(obs.edge_features.indices.astype(np.int32))
         # # self.edge_attr = torch.FloatTensor(obs.edge_features.values).unsqueeze(1)
-        # self.variable_features = torch.FloatTensor(obs.column_features)
+        # self.variable_features = torch.FloatTensor(obs.variable_features)
         # self.candidates = torch.from_numpy(candidates.astype(np.int32)).long()
         # self.raw_candidates = torch.from_numpy(candidates.astype(np.int32)).long()
         

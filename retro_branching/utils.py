@@ -420,11 +420,11 @@ class GraphDataset(torch_geometric.data.Dataset):
         candidate_choice = torch.where(candidates == sample_action)[0][0]
 
         graph = BipartiteNodeData(sample_observation.row_features, sample_observation.edge_features.indices, 
-                                  sample_observation.edge_features.values, sample_observation.column_features,
+                                  sample_observation.edge_features.values, sample_observation.variable_features,
                                   candidates, candidate_choice, candidate_scores, score)
         
         # We must tell pytorch geometric how many nodes there are, for indexing purposes
-        graph.num_nodes = sample_observation.row_features.shape[0]+sample_observation.column_features.shape[0]
+        graph.num_nodes = sample_observation.row_features.shape[0]+sample_observation.variable_features.shape[0]
         
         return graph
 
