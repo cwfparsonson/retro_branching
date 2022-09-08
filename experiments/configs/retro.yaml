@@ -1,7 +1,10 @@
-defaults:
-  - network: dqn_value_network
-  - agent: dqn_agent
-  - learner: dqn_learner
+network:
+  init_value_network_path:
+  reinitialise_heads: false
+
+agent: {}
+
+
 
 environment:
   observation_function: '43_var_features'
@@ -10,21 +13,17 @@ environment:
   scip_params: 'gasse_2019'
 
 learner:
-  path_to_save: '/scratch/datasets/retro_branching'
+  path_to_save: 'outputs/datasets/retro_branching'
   agent_reward: 'retro_binary_fathomed'
 
 instances:
-  co_class: 'set_covering'
+  co_class: 'capacitated_facility_location'
   co_class_kwargs:
-    'n_rows': 165
-    'n_cols': 230
-  #co_class: 'combinatorial_auction'
-  #co_class_kwargs:
-    #n_items: 10
-    #n_bids: 50
+    'n_customers': 100
+    'n_facilities': 100
 
 experiment:
   seed: 0
-  device: 'cuda:2'
+  device: 'cpu'
   num_epochs: 5000000
   
