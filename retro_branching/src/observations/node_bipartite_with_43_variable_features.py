@@ -13,23 +13,23 @@ class NodeBipariteWith43VariableFeatures(ecole.observation.NodeBipartite):
     '''
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
+
     def before_reset(self, model):
         super().before_reset(model)
-        
+
         self.init_dual_bound = None
         self.init_primal_bound = None
-        
+
     def extract(self, model, done):
         # get the NodeBipartite obs
         obs = super().extract(model, done)
-        
+
         m = model.as_pyscipopt()
-        
+
         if self.init_dual_bound is None:
             self.init_dual_bound = m.getDualbound()
             self.init_primal_bound = m.getPrimalbound()
-            
+
         # dual/primal bound features
         # dual_bound_frac_change = abs(1-(min(self.init_dual_bound, m.getDualbound()) / max(self.init_dual_bound, m.getDualbound())))
         # primal_bound_frac_change = abs(1-(min(self.init_primal_bound, m.getPrimalbound()) / max(self.init_primal_bound, m.getPrimalbound())))
@@ -41,7 +41,7 @@ class NodeBipariteWith43VariableFeatures(ecole.observation.NodeBipartite):
         max_primal_bound_frac_change = primal_dual_gap / self.init_primal_bound
 
         curr_primal_dual_bound_gap_frac = m.getGap()
-        
+
         # global tree features
         num_leaves_frac = m.getNLeaves() / m.getNNodes()
         num_feasible_leaves_frac = m.getNFeasibleLeaves() / m.getNNodes()
@@ -50,7 +50,7 @@ class NodeBipariteWith43VariableFeatures(ecole.observation.NodeBipartite):
 #         num_feasible_sols_found_frac = m.getNSolsFound() / m.getNNodes() # gives idea for how hard problem is, since harder problems may have more sparse feasible solutions?
 #         num_feasible_best_sols_found_frac = m.getNBestSolsFound() / m.getNSolsFound()
         num_lp_iterations_frac = m.getNNodes() / m.getNLPIterations()
-        
+
         # focus node features
         num_siblings_frac = m.getNSiblings() / m.getNNodes()
         curr_node = m.getCurrentNode()
@@ -116,11 +116,6 @@ class NodeBipariteWith43VariableFeatures(ecole.observation.NodeBipartite):
             best_sibling_lower_bound_relative_to_curr_dual_bound = 0
             best_sibling_lower_bound_relative_to_curr_node_lower_bound = 0
 
-        #print(dir(obs))
-        #print(obs.edge_features)
-        #print(obs.row_features)
-        #print(obs.variable_features)
-        
         # add feats to each variable
         feats_to_add = np.array([[dual_bound_frac_change,
                                  primal_bound_frac_change,
@@ -151,14 +146,14 @@ class NodeBipariteWith43VariableFeatures(ecole.observation.NodeBipartite):
         # illegal_feat_idx_to_val = defaultdict(lambda: [])
         # illegal_found = False
         # for var in feats_to_add:
-            # for idx, feat in enumerate(var): 
+            # for idx, feat in enumerate(var):
                 # if feat < -1 or feat > 1:
                     # illegal_found = True
                     # illegal_feat_idx_to_val[idx].append(feat)
         # if illegal_found:
             # raise Exception(f'Found illegal feature(s): {illegal_feat_idx_to_val}')
-        
+
         obs.variable_features = np.column_stack((obs.variable_features, feats_to_add))
 
-                
+
         return obs
