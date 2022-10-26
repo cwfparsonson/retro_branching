@@ -49,7 +49,7 @@ class NormalisedLPGain:
                 self.prev_node_id = copy.deepcopy(self.prev_node.getNumber())
                 self.prev_primal_bound = m.getPrimalbound()
                 self.init_primal_bound = m.getPrimalbound()
-            return 0
+            # return 0  # dsorokin: I think it is bug
 
         # update search tree with current model state
         self.tree.update_tree(model)
