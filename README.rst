@@ -4,7 +4,7 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-Implementation of retro branching as reported in `C. W. F. Parsonson et al., 'Reinforcement Learning for Branch-and-Bound Optimisation using Retrospective Trajectories <https://arxiv.org/abs/2205.14345', AAAI'23: Proceedings of the Thirty-Seventh AAAI Conference on Artificial Intelligence, 2023>`_.
+Implementation of retro branching as reported in `C. W. F. Parsonson et al., 'Reinforcement Learning for Branch-and-Bound Optimisation using Retrospective Trajectories, AAAI'23: Proceedings of the Thirty-Seventh AAAI Conference on Artificial Intelligence, 2023 <https://arxiv.org/abs/2205.14345'>`_.
 
 .. figure:: assets/retro_branching_800.gif
 
