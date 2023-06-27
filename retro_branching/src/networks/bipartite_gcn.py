@@ -350,7 +350,7 @@ class BipartiteGCN(torch.nn.Module):
             # edge_indices = torch.from_numpy(obs.edge_features.indices.astype(np.int16)).to(self.device)
             edge_indices = torch.LongTensor(obs.edge_features.indices.astype(np.int16)).to(self.device)
             edge_features = torch.from_numpy(obs.edge_features.values.astype(np.float32)).view(-1, 1).to(self.device)
-            variable_features = torch.from_numpy(obs.column_features.astype(np.float32)).to(self.device)
+            variable_features = torch.from_numpy(obs.variable_features.astype(np.float32)).to(self.device)
             if self.profile_time:
                 print(f'var feat: {variable_features[0][0]}')
                 t = time.time() - start

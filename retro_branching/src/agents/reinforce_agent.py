@@ -118,7 +118,7 @@ class REINFORCEAgent:
         self.filter_mask = np.array([torch.where(self.filter_output >= threshold, 1, 0).detach().cpu().numpy()]).T # column vector
 
         # add filter mask predictions as feature to variable (column) features
-        obs.column_features = np.hstack((obs.column_features, self.filter_mask))
+        obs.variable_features = np.hstack((obs.variable_features, self.filter_mask))
 
         if filter_method == 'method_1':
             # agent can only choose actions permitted by filter_network -> update action_set

@@ -49,8 +49,8 @@ class NodeBipariteWith24VariableFeatures(ecole.observation.NodeBipartite):
                                  max_primal_bound_frac_change,
                                  max_dual_bound_frac_change,
                                  curr_primal_dual_bound_gap_frac,
-                                 ] for _ in range(obs.column_features.shape[0])])
+                                 ] for _ in range(obs.variable_features.shape[0])])
         
-        obs.column_features = np.column_stack((obs.column_features, feats_to_add))
+        obs.variable_features = np.column_stack((obs.variable_features, feats_to_add))
                 
         return obs
